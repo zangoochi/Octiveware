@@ -1,0 +1,115 @@
+<!--
+=====================================================================================================
+Description:
+The workflow page is the main page of the translation project. This page will hold the buttons that allow a user 
+create legacy exams, source texts, and run analysis on the data held in the database. The page includes tabs that separate
+the different parts of the translation software. These include exams that still need the target texts inputted in 
+"Exam Input", Exams that still need to be graded in "Grading", as well as discrepencies in graded exams in "Discrepencies"
+=====================================================================================================
+
+Edited by: Zach Montgomery
+Date: 10/23/14
+Contact info: zmontgom@kent.edu
+Changes made: Added names for single elements so that we can run permission checking on them and remove the option if the user
+				does not have the appropriate permissions. Names will be given to: Drop down buttons for Legacy Exams, Source Texts, and Analysis, along with the different tabs.  
+				
+
+             _________________________div id: drop-down-nav____________________________________
+			|	 ____________________    _____________________    	   ________________________| 
+			|	|Legacy Exam:        |  |Source Text:         |   	  |Analysis:               |
+			|	| id: exam-drop-down |	| id: source-drop-down|   	  | id: analysis-drop-down |   
+			|	|____________________|  |_____________________|   	  |________________________|   
+			|__________|_______________________|____________________________|__________________|
+				   	   V                       V                            V
+			 	
+			  __ul id: drop1_________    ___ul id: drop2________    ______ul id: drop3___________
+			 |   __________________  |  |  ___________________  |  |   ________________________  |
+			 |  |Enter Legacy Exam:| |  | | Enter Source Text | |  |  | Analysis Workflow Page | |
+			 |  |   id: enter-exam | |  | |   id: enter-source| |  |  |    id: analysis-page   | |
+			 |  |__________________| |  | |___________________| |  |  |________________________| |
+			 |_______________________|  | | View all sources  | |  |  |  View Graded Exams     | |
+						    			| |	 id: view-source  | |  |  |    id: view-graded     | |
+					            		| |___________________| |  |  |________________________| |
+						    			|_______________________|  |  |  R Function Designer   | |
+						    									   |  |  id: function-designer | |
+																   |  |________________________| |
+						    									   |_____________________________|
+
+
+   
+Edited by: Abdullah Mashabi
+Date:10/23/14
+Contact Info: amashabi@kent.edu
+Changes made: Remove unnecessary reviewing functionality for workflow page. (Ticket #607)  
+
+-->
+
+
+
+{% extends 'base/base.html' %}
+
+{% load staticfiles %}
+
+{% block body_block %}
+
+<!--When adding reviewSourceText functionality, the below <style> needs to be removed-->
+	<div class="row" style="margin-top:50px">
+		<div class="small-12 columns t-center">
+			<ul id="drop-down-nav" class="workflow-button-group radius button-group">
+			  	<li><a href="#" data-dropdown="drop1" class="button small dropdown">Test</a><br>
+					<ul id="drop1" data-dropdown-content class="f-dropdown">
+			  			<li><a href="">Test</a></li>
+					</ul>
+				</li>
+			  	<li><a href="#" data-dropdown="drop2" class="button small dropdown">Test</a><br>
+					<ul id="drop2" data-dropdown-content class="f-dropdown">
+			  			<li><a href="">Test</a></li>
+						<li><a href="">Test</a></li>
+					</ul>
+				</li>	
+			  	<li><a href="#" data-dropdown="drop3" class="button small dropdown">Test</a><br>
+					<ul id="drop3" data-dropdown-content class="f-dropdown">
+			  			<li><a href="">Test</a></li>
+			  			<li><a href="">Test</a></li>	
+	  					<li><a href="">Test</a></li>	  
+					</ul>
+				</li>			  			  
+			</ul>
+		</div>
+	</div>
+	
+	<div class="row">
+	
+		<div class="small-12 small-centered columns panel callout radius profile-content">
+			<!-- commenting out the 3 pages below to remove reviewing structure -->
+			<div class="center-tabs">
+				<dl id="tabs" class="tabs" data-tab>
+			  		<dd><a href="#panel2-1">Shirts</a></dd>
+					<dd><a href="#panel2-3">Pants</a></dd>
+			  		<dd><a href="#panel2-6">Accessories</a></dd>			
+				</dl>
+			</div>
+
+			<div class="tabs-content">
+
+			  	<div class="content" id="panel2-1">
+			    	<p>T-Shirt line</p>
+			  		
+			    
+			  	</div>
+			  				
+			  	<div class="content active" id="panel2-3">
+			    	<p>Pants line.</p>		
+
+			  	</div>
+
+			  	<div class="content" id="panel2-6">
+			    	<p>Accessories</p>
+
+			  	</div>
+			</div>
+		</div>
+	</div>
+
+	{% endblock %}
+

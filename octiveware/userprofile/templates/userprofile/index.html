@@ -1,0 +1,61 @@
+<!--
+=====================================================================================================
+Description:
+Template for the userprofile page. This page will display information about the user such as the user languages, 
+group, email, last login, account created date, etc.  
+=====================================================================================================
+
+Edited by: Zach Montgomery
+Date: 10/18/14
+Contact info: zmontgom@kent.edu
+Changes made: Added button for changing user email address. 	 
+-->
+
+
+{% extends 'base/base.html' %}
+
+{% load staticfiles %}
+
+{% block body_block %}
+
+
+	<h1>Users Profile Page</h1>
+	<div class="row">
+		<div class="small-10 small-centered columns panel callout radius">
+			<div class="row" style="margin-top:10px">
+				<div class="small-7 columns">
+					<div class="row">
+						<div class="small-12 columns small-centered" style="margin-left:10px">
+							<table>
+								<th><h3>User Information</h2></th>
+								<tr>
+									<td>Username: </td><td>{{ user }}</td>
+								</tr>
+								<tr>
+									<td>Name: </td><td>{{ user.get_full_name }}</td>
+								</tr>
+								<tr>
+									<td>Email: </td><td>{{ user.email }}</td>
+								</tr>
+								<tr>
+									<td>Last Login: </td><td>{{ user.last_login }}</td>
+								</tr>
+								<tr>
+									<td>Account Created: </td><td>{{ user.date_joined }}</td>
+								</tr>
+							</table>
+						</div>
+					</div>
+					<div class="row">
+						<div class="samll-12 columns" style="margin-left:10px">
+							<ul class="button-group radius">
+								<li><a href="/accounts/password-change/" class="button tiny" style="color:#fff">Change Password</a></li>
+								<li><a href="/login/change-email" class="button tiny" style="color:#fff">Change Email</a></li>
+							</ul>
+						</div>
+					</div>	
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}
