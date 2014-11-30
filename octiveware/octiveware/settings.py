@@ -95,7 +95,7 @@ STATICFILES_DIRS = (
 )
 
 TEMPLATE_DIRS = (
-    os.path.join(BASE_DIR, 'templates'),
+    BASE_DIR + '/templates/',
     # BASE_DIR + '/templates/'
     #'translation_mockup/templates',
     #'sidebyside/templates'
