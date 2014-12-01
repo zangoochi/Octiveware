@@ -127,7 +127,7 @@ select {
   margin-right: auto;
   margin-top: 0;
   margin-bottom: 0;
-  max-width: 100%;
+  max-width: 95%;
   *zoom: 1; }
   .row:before, .row:after {
     content: " ";
@@ -1380,9 +1380,7 @@ meta.foundation-mq-topbar {
     -webkit-transition: none 0 0;
     -moz-transition: none 0 0;
     transition: none 0 0;
-    left: 0 !important; 
-    width:100%;
-    position:fixed;}
+    left: 0 !important;}
     .top-bar-section ul {
       width: auto;
       height: auto !important;
